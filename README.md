@@ -1,4 +1,4 @@
-# HSE Compliance Checklist website (BFN Package-1, CPECC)
+# HSE Compliance Checklist website
 
 Upload the Master Training Register (Excel, sheet `KENT TRAINING MATRIX`); the HSE Compliance Checklist is filled from it.
 
