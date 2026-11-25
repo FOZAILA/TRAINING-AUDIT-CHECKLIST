@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block body %}
+<header><h1>HSE Compliance Checklist</h1><small>Upload register &rarr; checklist filled automatically</small></header>
+<main>
+{% for m in get_flashed_messages() %}<div class="msg">{{ m }}</div>{% endfor %}
+<div class="card"><h2>Upload latest Master Training Register</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+<input type="file" name="register" accept=".xlsx,.xlsm" required>
+<button class="btn primary" type="submit">Upload &amp; calculate</button></form>
+<p class="note">Sheet name should be "KENT TRAINING MATRIX". Red (inactive) rows are not counted. Everything is calculated from the last uploaded register and today's date.</p></div>
+{% if meta %}<div class="card"><h2>Current register</h2>
+<p><b>{{ meta.filename }}</b> - uploaded {{ meta.uploaded_at }}{% if reg %} - {{ reg.employees|length }} active employees{% if reg.excluded %} ({{ reg.excluded|length }} red rows excluded){% endif %}{% endif %}</p>
+<a class="btn primary" href="/checklist">Checklist</a>
+<a class="btn" href="/download/checklist.xlsx">HSE Compliance Checklist</a></div>{% endif %}
+</main>{% endblock %}

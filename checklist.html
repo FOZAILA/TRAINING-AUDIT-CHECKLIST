@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block body %}
+<header><div><h1>HSE Compliance Checklist - auto-filled</h1><small>Register: {{ meta.filename }} | As of {{ as_of.strftime('%d-%b-%Y') }}</small></div>
+<nav><a href="/">Upload</a><a class="btn primary" href="/download/checklist.xlsx">Download filled checklist</a></nav></header>
+<main>
+<div class="kpis">{% for k,v in info.totals.items() %}<div class="kpi">{{ k }} compliance<b>{{ v.pct }}%</b><span class="note">{{ v.attended }} / {{ v.to_attend }}</span></div>{% endfor %}
+<div class="kpi">Employees counted<b>{{ info.headcount_total }}</b></div></div>
+{% if info.excluded %}<div class="msg">Active manpower only: {{ info.excluded }} red (inactive) register rows are not counted.</div>{% endif %}
+{% if info.warnings %}<div class="msg"><b>Please check:</b><br>{% for w in info.warnings %}{{ w }}<br>{% endfor %}</div>{% endif %}
+<div class="card"><h2>Training blocks</h2><table><tr><th>Checklist training</th><th>Side</th><th>Register column used</th><th>To attend</th><th>Attended (valid)</th><th>%</th></tr>
+{% for b in info.blocks %}<tr><td>{{ b.title }}</td><td>{{ b.side }}</td><td>{{ b.training or '-- not found --' }}</td><td>{{ b.to_attend }}</td><td>{{ b.attended }}</td><td>{{ b.pct if b.pct is not none else '-' }}</td></tr>{% endfor %}</table>
+<p class="note">H2S L1 is counted first; H2S L2 "To attend" = headcount minus L1 attended, and L2 attended counts only people without a valid L1. Expired records are never counted. The 18 Yes/No questions are left for the auditor.</p></div>
+</main>{% endblock %}

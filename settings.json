@@ -1,0 +1,113 @@
+{
+  "project_short": "BFN",
+  "contractor": "CPECC",
+  "register_sheet_name": "KENT TRAINING MATRIX",
+  "expiry_soon_days": 30,
+  "as_of_date": null,
+  "inhouse_starts_at": "Heat Stress Awareness Training",
+  "key_trainings": {
+    "heat_stress": "^HEAT STRESS",
+    "h2s_l1": "^H2S TRAINING LEVEL.?1",
+    "h2s_l2": "^H2S TRAINING LEVEL.?2"
+  },
+  "h2s_pool_rule": true,
+  "checklist": {
+    "template": "HSE_Compliance_Checklist_TEMPLATE.xlsx",
+    "min_match_score": 0.6,
+    "block_overrides": {
+      "hse induction": "induction",
+      "basic first aid": "first aid",
+      "certified scaffolder": "certified scaffolder"
+    }
+  },
+  "company_parents": [
+    {
+      "name": "CPECC ZONE 1",
+      "patterns": [
+        "^CPECC.*ZONE"
+      ]
+    },
+    {
+      "name": "CPECC DIV 1",
+      "patterns": [
+        "^CPECC"
+      ]
+    },
+    {
+      "name": "BUSAN",
+      "patterns": [
+        "^BUSAN"
+      ]
+    },
+    {
+      "name": "CAPSA",
+      "patterns": [
+        "^CAPSA"
+      ]
+    },
+    {
+      "name": "DRC",
+      "patterns": [
+        "^DRC\\b"
+      ]
+    },
+    {
+      "name": "VIJAY TANKS",
+      "patterns": [
+        "^VIJAY"
+      ]
+    },
+    {
+      "name": "ABRE",
+      "patterns": [
+        "^ABRE"
+      ]
+    },
+    {
+      "name": "YORK",
+      "patterns": [
+        "^YORK"
+      ]
+    },
+    {
+      "name": "DAMSHIQUE",
+      "patterns": [
+        "^DAMSHIQUE"
+      ]
+    },
+    {
+      "name": "FOURTH DIMENSION",
+      "patterns": [
+        "^FOURTH"
+      ]
+    },
+    {
+      "name": "CAMBER",
+      "patterns": [
+        "^CAMBER"
+      ]
+    },
+    {
+      "name": "INTHERPRO",
+      "patterns": [
+        "^INTHERPRO"
+      ]
+    },
+    {
+      "name": "CHEC (CHINA HARBOUR)",
+      "patterns": [
+        "^CHEC\\b",
+        "CHINA HARBOUR"
+      ]
+    },
+    {
+      "name": "AL-BANNA",
+      "patterns": [
+        "^AL[- ]?BANNA"
+      ]
+    }
+  ],
+  "exclude_red_rows": true,
+  "red_row_min_cells": 10,
+  "training_type_overrides": {}
+}
