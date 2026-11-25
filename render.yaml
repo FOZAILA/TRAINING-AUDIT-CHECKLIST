@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hse-checklist
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --timeout 300 --workers 1
+    envVars:
+      - key: APP_PASSWORD
+        sync: false        # Render asks you for this value: set a strong password
+      - key: PYTHON_VERSION
+        value: 3.12.3
